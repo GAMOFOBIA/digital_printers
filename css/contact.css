@@ -1,0 +1,314 @@
+/* =========================================
+   CONTACT PAGE STYLES
+   ========================================= */
+
+/* --- Page Hero --- */
+.page-hero {
+  position: relative;
+  height: 330px;
+  background-color: #0f172a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin-top: 0; /* Remove if you want header to overlap */
+  padding-top: 80px; /* Space for fixed header */
+}
+
+.page-hero-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* Add your abstract flower background image here */
+  background-image: url("../images/header_1.jpg");
+  background-size: cover;
+  background-position: center;
+  opacity: 0.6; /* Darken image */
+  z-index: 1;
+}
+
+.page-title {
+  color: #ffffff;
+  font-size: 48px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+
+.breadcrumb {
+  color: #cbd5e1;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+/* --- Map Section --- */
+.map-section {
+  width: 100%;
+  line-height: 0; /* Removes space below iframe */
+}
+
+.map-container iframe {
+  filter: grayscale(
+    20%
+  ); /* Optional: Slight grey filter on map for cleaner look */
+}
+
+/* --- Overlapping Contact Card Section --- */
+.contact-card-section {
+  background-color: var(--bg-light); /* Light grey background behind the card */
+  padding-bottom: 100px;
+}
+
+.contact-card-wrapper {
+  /* THIS PULLS THE CARD UP OVER THE MAP */
+  margin-top: -150px;
+  position: relative;
+  z-index: 10;
+}
+
+.contact-card {
+  background-color: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
+  display: grid;
+  grid-template-columns: 1fr 1.5fr; /* Left is smaller, right form is wider */
+  gap: 50px;
+  padding: 60px;
+}
+
+/* --- Left Side: Info --- */
+.contact-info h2 {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 40px;
+  position: relative;
+  padding-bottom: 15px;
+}
+
+/* Blue line under heading */
+.contact-info h2::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 50px;
+  height: 3px;
+  background-color: var(--primary-color);
+}
+
+.info-item {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.info-icon {
+  width: 45px;
+  height: 45px;
+  background-color: rgba(0, 123, 255, 0.1);
+  color: var(--primary-color);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.info-text p {
+  font-size: 15px;
+  color: var(--text-light);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* --- Right Side: Form --- */
+.contact-form form {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.form-group {
+  position: relative;
+}
+
+/* Minimalist Inputs (Only bottom border) */
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 15px 0;
+  background-color: transparent;
+  border: none;
+  border-bottom: 2px solid #e2e8f0;
+  font-size: 15px;
+  color: var(--text-dark);
+  font-family: var(--font-main);
+  transition: border-color 0.3s ease;
+  outline: none;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: #94a3b8;
+}
+
+/* Input Focus Effect */
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-bottom-color: var(--primary-color);
+}
+
+.contact-form textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.submit-btn {
+  background-color: var(--primary-color);
+  color: #ffffff;
+  border: none;
+  padding: 15px 40px;
+  font-size: 15px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: max-content;
+  margin-top: 10px;
+}
+
+.submit-btn:hover {
+  background-color: #0056b3;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 123, 255, 0.2);
+}
+
+/* =========================================
+   FULLY RESPONSIVE DESIGN (TABLETS & MOBILE)
+   ========================================= */
+
+/* 1. Large Tablets & Small Laptops (under 1200px) */
+@media (max-width: 1200px) {
+  .contact-card {
+    padding: 50px 40px; /* Slightly less padding */
+    gap: 40px;
+  }
+}
+
+/* 2. Standard Tablets & iPads (under 992px) */
+@media (max-width: 992px) {
+  .page-hero {
+    height: 280px; /* Shorter hero on mobile */
+    padding-top: 60px;
+  }
+
+  .page-title {
+    font-size: 36px;
+  }
+
+  /* Stack the card vertically */
+  .contact-card {
+    grid-template-columns: 1fr;
+    padding: 40px 30px;
+    gap: 40px;
+  }
+
+  /* Reduce the overlap so it doesn't cover too much of the map */
+  .contact-card-wrapper {
+    margin-top: -100px;
+  }
+
+  /* Optional: Add a divider between info and form on mobile */
+  .contact-info {
+    padding-bottom: 30px;
+    border-bottom: 1px solid #e2e8f0;
+  }
+}
+
+/* 3. Large Phones (under 768px) */
+@media (max-width: 768px) {
+  .page-hero {
+    height: 250px;
+  }
+
+  .page-title {
+    font-size: 32px;
+  }
+
+  .breadcrumb {
+    font-size: 14px;
+  }
+
+  /* Reduce overlap further */
+  .contact-card-wrapper {
+    margin-top: -80px;
+  }
+
+  .contact-card {
+    padding: 30px 20px;
+    border-radius: 15px; /* Slightly sharper corners */
+  }
+
+  .contact-info h2 {
+    font-size: 24px;
+    margin-bottom: 30px;
+  }
+
+  /* Make the form fields a bit taller for easier tapping */
+  .contact-form input,
+  .contact-form textarea {
+    padding: 12px 0;
+    font-size: 16px; /* 16px prevents auto-zoom on iPhones */
+  }
+
+  /* Make the submit button full width for easier tapping */
+  .submit-btn {
+    width: 100%;
+    text-align: center;
+    padding: 15px 20px;
+  }
+}
+
+/* 4. Small Phones (under 480px) */
+@media (max-width: 480px) {
+  .page-hero {
+    height: 220px;
+    padding-top: 80px; /* Push text down below the header */
+  }
+
+  .page-title {
+    font-size: 28px;
+  }
+
+  .contact-card-wrapper {
+    margin-top: -40px; /* Almost flat overlap */
+  }
+
+  .contact-card {
+    padding: 25px 15px;
+  }
+
+  /* Stack icon and text on very small screens if needed */
+  .info-item {
+    gap: 15px;
+  }
+
+  .info-icon {
+    width: 35px;
+    height: 35px;
+  }
+
+  .info-icon svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  .info-text p {
+    font-size: 14px;
+  }
+}

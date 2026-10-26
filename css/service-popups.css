@@ -1,0 +1,199 @@
+/* =========================================
+   SERVICE PAGE: POPUPS & LARGE FORMAT
+   ========================================= */
+
+/* --- Page Hero --- */
+.page-hero {
+  position: relative;
+  height: 350px;
+  background-color: #0f172a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin-top: 0;
+  padding-top: 80px;
+}
+
+.page-hero-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("../images/header_1.jpg");
+  background-size: cover;
+  background-position: center;
+  opacity: 0.6;
+  z-index: 1;
+}
+
+.page-title {
+  color: #ffffff;
+  font-size: 42px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+
+.breadcrumb {
+  color: #cbd5e1;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+/* --- Main Layout Section --- */
+.service-detail-section {
+  padding: 80px 0;
+  background-color: #ffffff;
+}
+
+.service-detail-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr; /* 2/3 for content, 1/3 for sidebar */
+  gap: 60px;
+  align-items: start;
+}
+
+/* --- Left Side: Main Content --- */
+.service-main-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.service-title-icon {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 25px;
+}
+
+/* The Blue Icon Circle */
+.service-icon-large {
+  width: 70px;
+  height: 70px;
+  background-color: var(--primary-color);
+  color: #ffffff;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  box-shadow: 0 5px 15px rgba(0, 123, 255, 0.3);
+}
+
+.service-icon-large svg {
+  width: 32px;
+  height: 32px;
+}
+
+.service-main-content h2 {
+  font-size: 32px;
+  font-weight: 800;
+  color: #111;
+  margin: 0;
+}
+
+.service-description {
+  font-size: 16px;
+  color: var(--text-light);
+  line-height: 1.8;
+  margin-bottom: 40px;
+}
+
+/* Image styling */
+.service-hero-image {
+  width: 100%;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.service-hero-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+/* --- Right Side: Sidebar (Blue Box) --- */
+.service-sidebar {
+  position: sticky;
+  top: 120px; /* Stays visible if user scrolls down */
+}
+
+.sidebar-cta-box {
+  background-color: var(--primary-color); /* Brand Blue */
+  padding: 40px 30px;
+  border-radius: 8px;
+  color: #ffffff;
+  box-shadow: 0 15px 40px rgba(0, 123, 255, 0.2);
+}
+
+.sidebar-cta-box h3 {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.sidebar-cta-box p {
+  font-size: 15px;
+  line-height: 1.7;
+  margin-bottom: 25px;
+  opacity: 0.9;
+}
+
+.sidebar-cta-btn {
+  display: inline-block;
+  background-color: #ffffff;
+  color: var(--primary-color);
+  text-decoration: none;
+  padding: 12px 25px;
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+  letter-spacing: 0.5px;
+}
+
+.sidebar-cta-btn:hover {
+  background-color: #f1f5f9;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* --- Mobile Responsiveness --- */
+@media (max-width: 992px) {
+  .page-hero {
+    height: 280px;
+    padding-top: 60px;
+  }
+
+  .page-title {
+    font-size: 32px;
+  }
+
+  .service-detail-grid {
+    grid-template-columns: 1fr; /* Stack vertically */
+    gap: 50px;
+  }
+
+  .service-main-content h2 {
+    font-size: 26px;
+  }
+
+  .service-sidebar {
+    position: static;
+  }
+
+  .service-icon-large {
+    width: 60px;
+    height: 60px;
+  }
+
+  .service-icon-large svg {
+    width: 26px;
+    height: 26px;
+  }
+}

@@ -1,0 +1,429 @@
+/* =========================================
+   ABOUT PAGE STYLES
+   ========================================= */
+
+/* --- Page Hero --- */
+.page-hero {
+  position: relative;
+  height: 350px;
+  background-color: #0f172a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin-top: 0;
+  padding-top: 80px; /* Space for fixed header */
+}
+
+.page-hero-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* Same background image as the contact page */
+  background-image: url("../images/header_1.jpg");
+  background-size: cover;
+  background-position: center;
+  opacity: 0.6; /* Darken image */
+  z-index: 1;
+}
+
+.page-title {
+  color: #ffffff;
+  font-size: 48px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+
+.breadcrumb {
+  color: #cbd5e1;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+/* --- Mobile Responsiveness --- */
+@media (max-width: 992px) {
+  .page-hero {
+    height: 280px;
+    padding-top: 60px;
+  }
+  .page-title {
+    font-size: 36px;
+  }
+}
+
+@media (max-width: 768px) {
+  .page-hero {
+    height: 250px;
+  }
+  .page-title {
+    font-size: 32px;
+  }
+}
+
+@media (max-width: 480px) {
+  .page-hero {
+    height: 220px;
+    padding-top: 80px;
+  }
+  .page-title {
+    font-size: 28px;
+  }
+}
+
+/* =========================================
+   ABOUT US CONTENT SECTION
+   ========================================= */
+.about-content-section {
+  background-color: #f4f6f9; /* Light grey background matching screenshot */
+}
+
+/* --- Top Centered Text --- */
+.about-header {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 60px auto;
+}
+
+.about-main-title {
+  font-size: 36px;
+  font-weight: 800;
+  color: var(--text-dark);
+  margin-bottom: 20px;
+}
+
+.about-main-desc {
+  font-size: 16px;
+  color: var(--text-light);
+  line-height: 1.8;
+}
+
+/* --- Grid Layout --- */
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr; /* Slider is slightly smaller than features */
+  gap: 60px;
+  align-items: center; /* Centers the content vertically */
+}
+
+/* --- Left Side: Slider --- */
+.about-slider-wrapper {
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.about-slider {
+  position: relative;
+  width: 100%;
+  height: 500px; /* Fixed height for consistency */
+}
+
+.about-slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+  z-index: 1;
+}
+
+.about-slide.active {
+  opacity: 1;
+  z-index: 2;
+}
+
+.about-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Blue Overlapping Box */
+.slider-badge {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background-color: var(--primary-color);
+  padding: 30px 40px;
+  z-index: 10;
+  min-width: 250px;
+}
+
+.slider-badge h3 {
+  color: #ffffff;
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.badge-line {
+  width: 40px;
+  height: 3px;
+  background-color: var(--accent-color); /* Gold line */
+}
+
+/* --- Right Side: Features Grid --- */
+.about-features {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* 2 columns for features */
+  gap: 40px;
+}
+
+.feature-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.feature-icon {
+  width: 65px;
+  height: 65px;
+  background-color: #e0f2fe; /* Very light blue background */
+  color: var(--primary-color); /* BLUE ICON */
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.feature-icon svg {
+  width: 28px;
+  height: 28px;
+}
+
+.feature-item h3 {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 12px;
+}
+
+.feature-item p {
+  font-size: 15px;
+  color: var(--text-light);
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* --- Mobile Responsiveness --- */
+@media (max-width: 1024px) {
+  .about-grid {
+    grid-template-columns: 1fr; /* Stack slider above features */
+    gap: 40px;
+  }
+
+  .about-slider {
+    height: 400px;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-main-title {
+    font-size: 28px;
+  }
+
+  .about-features {
+    grid-template-columns: 1fr; /* Stack features in 1 column */
+    gap: 30px;
+  }
+
+  .about-slider {
+    height: 300px;
+  }
+
+  .slider-badge {
+    padding: 20px;
+    min-width: 200px;
+  }
+
+  .slider-badge h3 {
+    font-size: 18px;
+  }
+}
+
+/* =========================================
+   CENTERED TESTIMONIAL SLIDER
+   ========================================= */
+.about-testimonial-section {
+  background-color: #ffffff;
+}
+
+/* --- Section Header --- */
+.testimonial-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.testimonial-subtitle {
+  display: block;
+  color: #94a3b8;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.testimonial-main-title {
+  font-size: 42px;
+  font-weight: 800;
+  color: #0f172a;
+  margin-bottom: 15px;
+}
+
+.testimonial-subtext {
+  font-size: 16px;
+  color: #64748b;
+}
+
+/* --- Slider Container --- */
+.testimonial-slider-container {
+  position: relative;
+  max-width: 1000px;
+  margin: 0 auto;
+  /* Fixed height is required for absolute positioning to work */
+  height: 280px;
+  overflow: hidden; /* Hides the slides waiting on the right */
+}
+
+/* --- Individual Slide --- */
+.testimonial-slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 50px;
+  align-items: center;
+
+  /* Start hidden and shifted to the right */
+  opacity: 0;
+  transform: translateX(100px);
+  pointer-events: none;
+
+  /* Smooth sliding animation */
+  transition: all 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+  z-index: 1;
+}
+
+/* Active Slide (Slides into the center) */
+.testimonial-slide.active {
+  opacity: 1;
+  transform: translateX(0);
+  pointer-events: auto;
+  z-index: 2;
+}
+
+/* Previous Slide (Slides out to the left) */
+.testimonial-slide.prev {
+  opacity: 0;
+  transform: translateX(-100px);
+  z-index: 1;
+}
+
+/* --- Left Side: Avatar & Name --- */
+.t-author-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.t-avatar-large {
+  width: 130px;
+  height: 130px;
+  background-color: #e0f2fe;
+  border: 4px solid #f1f5f9;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.t-avatar-large img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.t-name {
+  font-size: 18px;
+  font-weight: 800;
+  color: #111;
+  margin: 0;
+}
+
+.t-slash {
+  color: var(--primary-color);
+  font-weight: 400;
+  margin-left: 2px;
+}
+
+/* --- Right Side: Quote --- */
+.t-quote-col {
+  padding-left: 20px;
+}
+
+.t-quote {
+  font-size: 22px;
+  color: #64748b;
+  line-height: 1.8;
+  font-weight: 400;
+  margin: 0;
+}
+
+/* --- Navigation Dots --- */
+.t-indicators {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 50px;
+}
+
+.t-dot {
+  width: 25px;
+  height: 5px;
+  background-color: #cbd5e1;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.t-dot.active {
+  background-color: var(--primary-color);
+  width: 35px;
+}
+
+/* --- Mobile Responsiveness --- */
+@media (max-width: 768px) {
+  .testimonial-slide {
+    grid-template-columns: 1fr; /* Stack vertically */
+    gap: 30px;
+    text-align: center;
+  }
+
+  .t-author-col {
+    margin-bottom: 10px;
+  }
+
+  .t-quote-col {
+    padding-left: 0;
+  }
+
+  .t-quote {
+    font-size: 18px;
+  }
+
+  .testimonial-main-title {
+    font-size: 32px;
+  }
+}

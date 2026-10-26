@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Upload Artwork | Arihant Offset Printers</title>
+
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/upload.css" />
+  </head>
+  <body>
+    <!-- Universal Header & Sidebar -->
+    <div id="header-placeholder"></div>
+
+    <!-- PAGE HERO SECTION -->
+    <section class="page-hero">
+      <div class="page-hero-bg"></div>
+      <div class="container relative-z reveal">
+        <h1 class="page-title">UPLOAD YOUR ARTWORK</h1>
+        <p class="breadcrumb">Home - Upload Your Artwork</p>
+      </div>
+    </section>
+
+    <!-- UPLOAD CONTENT SECTION -->
+    <section class="upload-section">
+      <div class="container">
+        <div class="upload-grid">
+          <!-- Left Side: Upload Form -->
+          <div class="upload-form-container reveal">
+            <!-- IMPORTANT: Update the action URL with your actual email -->
+            <form
+              action="https://formsubmit.co/rishi@arihantoffset.com"
+              method="POST"
+              enctype="multipart/form-data"
+              id="uploadForm"
+            >
+              <label class="upload-label">UPLOAD YOUR ART WORK</label>
+
+              <!-- Custom File Input -->
+              <div class="file-input-wrapper">
+                <button type="button" class="choose-file-btn">
+                  CHOOSE FILE
+                </button>
+                <!-- IMPORTANT: name="attachment" is required for FormSubmit to email the file -->
+                <input
+                  type="file"
+                  name="attachment"
+                  id="fileInput"
+                  accept=".jpg, .jpeg, .png, .pdf"
+                  required
+                />
+              </div>
+
+              <!-- Shows the selected file name -->
+              <span id="file-name-display"></span>
+
+              <div class="file-instructions">
+                <span>One file only.</span>
+                <span>4 MB limit.</span>
+                <span>Allowed types: jpg png pdf.</span>
+              </div>
+
+              <!-- FormSubmit Hidden Settings -->
+              <input
+                type="hidden"
+                name="_subject"
+                value="New Artwork Upload!"
+              />
+              <input type="hidden" name="_captcha" value="false" />
+
+              <button type="submit" class="submit-upload-btn" id="submitBtn">
+                SUBMIT
+              </button>
+
+              <!-- Error Message Container -->
+              <div class="error-msg" id="errorMsg"></div>
+            </form>
+          </div>
+
+          <!-- Right Side: Sidebar -->
+          <div class="upload-sidebar reveal">
+            <div class="sidebar-cta-box">
+              <h3>How can we help you ?</h3>
+              <p>
+                If you would like to know how Arihant Offset Printer can help
+                you, then please get in touch today.
+              </p>
+              <a href="contact.html" class="sidebar-cta-btn">CONTACT US</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Universal Footer -->
+    <div id="footer-placeholder"></div>
+
+    <!-- Universal JS -->
+    <script src="js/main.js"></script>
+
+    <!-- Inline JS for File Validation -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const fileInput = document.getElementById("fileInput");
+        const fileNameDisplay = document.getElementById("file-name-display");
+        const errorMsg = document.getElementById("errorMsg");
+        const form = document.getElementById("uploadForm");
+
+        // Show file name when selected & validate
+        fileInput.addEventListener("change", function () {
+          errorMsg.style.display = "none"; // Hide previous errors
+
+          if (this.files.length > 1) {
+            errorMsg.textContent = "Error: Please upload only ONE file.";
+            errorMsg.style.display = "block";
+            this.value = ""; // Clear input
+            fileNameDisplay.textContent = "";
+            return;
+          }
+
+          if (this.files.length === 1) {
+            const file = this.files[0];
+            const maxSize = 4 * 1024 * 1024; // 4MB in bytes
+
+            // Check file size
+            if (file.size > maxSize) {
+              errorMsg.textContent = "Error: File size exceeds the 4 MB limit.";
+              errorMsg.style.display = "block";
+              this.value = "";
+              fileNameDisplay.textContent = "";
+              return;
+            }
+
+            // If valid, show the filename
+            fileNameDisplay.textContent = "Selected: " + file.name;
+          } else {
+            fileNameDisplay.textContent = "";
+          }
+        });
+
+        // Final check before form submits
+        form.addEventListener("submit", function (e) {
+          if (fileInput.files.length === 0) {
+            e.preventDefault();
+            errorMsg.textContent =
+              "Error: Please choose a file before submitting.";
+            errorMsg.style.display = "block";
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

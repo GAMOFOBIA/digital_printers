@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Us | Arihant Offset Printers</title>
+    <link rel="stylesheet" href="css/contact.css" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <!-- Universal Header & Sidebar -->
+    <div id="header-placeholder"></div>
+
+    <!-- PAGE HERO SECTION -->
+    <section class="page-hero">
+      <div class="page-hero-bg"></div>
+      <div class="container relative-z">
+        <h1 class="page-title">Contact</h1>
+        <!-- <p class="breadcrumb">Home - Contact</p> -->
+      </div>
+    </section>
+
+    <!-- GOOGLE MAP SECTION -->
+    <section class="map-section">
+      <div class="map-container">
+        <!-- Replace the src with your actual Google Maps Embed URL -->
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14874.41490378332!2d81.625306!3d21.247557!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a28dd4266922379%3A0xfa66dd32d4b8290!2sJ%20K%20Steel!5e0!3m2!1sen!2sin!4v1793043564530!5m2!1sen!2sin"
+          width="1600"
+          height="550"
+          style="border: 0"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="strict-origin-when-cross-origin"
+        ></iframe>
+      </div>
+    </section>
+
+    <!-- FLOATING CONTACT CARD SECTION -->
+    <section class="contact-card-section">
+      <div class="container">
+        <!-- This wrapper gets pulled up using CSS to overlap the map -->
+        <div class="contact-card-wrapper reveal">
+          <div class="contact-card">
+            <!-- Left Side: Location Details -->
+            <div class="contact-info">
+              <h2>Our Location</h2>
+
+              <div class="info-item">
+                <div class="info-icon">
+                  <svg
+                    viewBox="0 0 24 24"
+                    width="24"
+                    height="24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" />
+                  </svg>
+                </div>
+                <div class="info-text">
+                  <p>
+                    Address: Behind J.K. Steel, Bhaisthan Road, Raipur (C.G.)
+                  </p>
+                </div>
+              </div>
+
+              <div class="info-item">
+                <div class="info-icon">
+                  <svg
+                    viewBox="0 0 24 24"
+                    width="24"
+                    height="24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path
+                      d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"
+                    />
+                  </svg>
+                </div>
+                <div class="info-text">
+                  <p>(+91) 7000377316<br />rishi@arihantoffset.com</p>
+                </div>
+              </div>
+
+              <div class="info-item">
+                <div class="info-icon">
+                  <svg
+                    viewBox="0 0 24 24"
+                    width="24"
+                    height="24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path
+                      d="M17 1.01L7 1c-1.1 0-2 .9-2 2v18c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2V3c0-1.1-.9-1.99-2-1.99zM17 19H7V5h10v14z"
+                    />
+                  </svg>
+                </div>
+                <div class="info-text">
+                  <p>(+91) 9826414299</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Right Side: Contact Form -->
+            <div class="contact-form">
+              <!-- Using FormSubmit for email integration -->
+              <form
+                action="https://formsubmit.co/rishi@arihantoffset.com"
+                method="POST"
+              >
+                <div class="form-group">
+                  <input
+                    type="text"
+                    name="name"
+                    placeholder="Your Name*"
+                    required
+                  />
+                </div>
+
+                <div class="form-group">
+                  <input
+                    type="email"
+                    name="email"
+                    placeholder="Your Email Address*"
+                    required
+                  />
+                </div>
+
+                <div class="form-group">
+                  <input
+                    type="text"
+                    name="subject"
+                    placeholder="Subject*"
+                    required
+                  />
+                </div>
+
+                <div class="form-group">
+                  <textarea
+                    name="message"
+                    rows="5"
+                    placeholder="Message*"
+                    required
+                  ></textarea>
+                </div>
+
+                <!-- FormSubmit Settings -->
+                <input type="hidden" name="_captcha" value="false" />
+                <input
+                  type="hidden"
+                  name="_subject"
+                  value="New Contact Form Submission!"
+                />
+
+                <button type="submit" class="submit-btn">SEND MESSAGE</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Universal Footer -->
+    <div id="footer-placeholder"></div>
+
+    <!-- Universal JS -->
+    <script src="js/main.js"></script>
+  </body>
+</html>
